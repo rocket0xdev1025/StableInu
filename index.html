@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06101c" />
+  <meta
+    name="description"
+    content="Stablecoins are taking over, from Apple and Google to the EU’s digital future. $SINU leads the meme wave. Buy Stable Inu with Arc USDC."
+  />
+  <title>Stable Inu ($SINU) — The Meme Wave</title>
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            usdc: "#2775CA",
+            usdcbright: "#5AA6F5",
+            night: "#06101c",
+            ink: "#0a1830",
+            bone: "#f4f8fc",
+            mist: "#c9dcf0",
+            fur: "#f0c48a",
+          },
+          fontFamily: {
+            display: ["Anton", "Impact", "sans-serif"],
+            sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          boxShadow: {
+            glow: "0 10px 40px rgba(39, 117, 202, 0.45)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { color-scheme: dark; }
+    ::selection { background: #2775CA; color: #fff; }
+    body {
+      background-color: #06101c;
+    }
+    .ticker-track {
+      animation: ticker 36s linear infinite;
+    }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .spin-slow { animation: spin 22s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .floaty { animation: floaty 5.5s ease-in-out infinite; }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .buy-shine { position: relative; overflow: hidden; }
+    .buy-shine::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.35) 48%, transparent 62%);
+      transform: translateX(-120%);
+      animation: shine 3.8s ease-in-out infinite;
+    }
+    @keyframes shine {
+      0%, 55% { transform: translateX(-120%); }
+      80%, 100% { transform: translateX(120%); }
+    }
+    .js-copy[data-state="copied"] {
+      background: #fff !important;
+      color: #2775CA !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track, .spin-slow, .floaty, .buy-shine::after {
+        animation: none !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body class="font-sans text-bone antialiased">
+  <div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+    <img src="bg.png" alt="" class="h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-[#04101c]/62"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,8,18,0.72)_78%)]"></div>
+  </div>
+
+  <a
+    href="#content"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-usdc focus:px-4 focus:py-2 focus:text-white"
+  >Skip to content</a>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#06101c]/75 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+      <a href="#content" class="flex items-center gap-3">
+        <img
+          src="logo.png"
+          alt="Stable Inu"
+          width="512"
+          height="512"
+          class="h-11 w-11 rounded-xl object-cover ring-2 ring-usdc"
+        />
+        <span class="leading-none">
+          <span class="block font-display text-xl tracking-wide">STABLE INU</span>
+          <span class="mt-1 block text-[11px] font-extrabold tracking-[0.22em] text-usdcbright">$SINU</span>
+        </span>
+      </a>
+      <nav class="flex items-center gap-2 sm:gap-3" aria-label="Primary">
+        <a href="#how-to-buy" class="hidden rounded-full px-3 py-2 text-sm font-bold text-mist hover:text-white sm:inline">How to Buy</a>
+        <a href="#chart" class="hidden rounded-full px-3 py-2 text-sm font-bold text-mist hover:text-white sm:inline">Chart</a>
+        <a
+          href="https://x.com/StableInu_arc"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Stable Inu on X"
+          class="grid h-11 w-11 place-items-center overflow-hidden rounded-full ring-1 ring-white/20 transition hover:ring-usdcbright"
+        >
+          <img src="x.png" alt="" width="554" height="554" class="h-full w-full object-cover" />
+        </a>
+        <a
+          href="https://argus.world/token/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="buy-shine inline-flex h-11 items-center gap-2 rounded-full bg-gradient-to-b from-[#4B9BF2] to-[#1E67C2] px-4 text-sm font-extrabold text-white shadow-glow"
+        >
+          <span class="relative z-10">Buy Now</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="mx-auto max-w-6xl px-4 pb-6 pt-6 md:pt-8">
+      <div class="relative">
+        <div class="overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-usdc via-white/70 to-[#123a66] p-[2px] shadow-glow">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-[1.65rem] sm:aspect-[16/9] lg:aspect-[3/1]">
+            <img
+              src="banner.jpg"
+              alt="Stable Inu mascot in a USDC cap and shirt against a neon city skyline"
+              width="2448"
+              height="816"
+              class="h-full w-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#06101c] via-transparent to-[#06101c]/20"></div>
+            <p class="absolute right-4 top-4 rounded-full bg-usdc px-3 py-1 text-[11px] font-extrabold tracking-[0.18em] text-white shadow-glow">ON ARC</p>
+          </div>
+        </div>
+
+        <div class="relative z-10 -mt-14 md:-mt-20">
+          <article class="rounded-[1.75rem] border border-white/15 bg-[#071422]/88 p-5 shadow-2xl backdrop-blur-xl sm:p-8 md:p-10">
+            <div class="grid items-center gap-6 md:grid-cols-[auto_1fr]">
+              <div class="floaty mx-auto -mt-20 h-36 w-36 shrink-0 md:mx-0 md:-mt-28 md:h-44 md:w-44">
+                <div class="relative h-full w-full">
+                  <svg class="spin-slow absolute inset-0" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs>
+                      <path id="sinu-ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" fill="none" />
+                    </defs>
+                    <text fill="#8EC4FF" font-size="13" font-family="Manrope, sans-serif" font-weight="800" letter-spacing="3.2">
+                      <textPath href="#sinu-ring" xlink:href="#sinu-ring">STABLE INU · $SINU · ARC USDC ·&nbsp;</textPath>
+                    </text>
+                  </svg>
+                  <img
+                    src="logo.png"
+                    alt=""
+                    width="512"
+                    height="512"
+                    class="absolute inset-[18%] rounded-full object-cover ring-4 ring-usdc ring-offset-2 ring-offset-[#071422]"
+                  />
+                </div>
+              </div>
+
+              <div class="text-center md:text-left">
+                <p class="text-xs font-extrabold tracking-[0.28em] text-fur">THE STABLE MEME</p>
+                <h1 class="mt-2 font-display text-[clamp(3.4rem,9vw,6.6rem)] leading-[0.86] tracking-wide">
+                  STABLE <span class="text-usdcbright">INU</span>
+                </h1>
+                <p class="mt-3 inline-flex rounded-full border border-usdc/50 bg-usdc/15 px-3 py-1 text-sm font-extrabold tracking-[0.22em] text-usdcbright">$SINU</p>
+              </div>
+            </div>
+
+            <p class="mx-auto mt-6 max-w-3xl text-center text-lg font-semibold leading-relaxed text-white md:text-left md:text-2xl">
+              Stablecoins are taking over, from Apple and Google to the EU’s digital future.
+              <span class="mt-1 block text-usdcbright">$SINU leads the meme wave.</span>
+            </p>
+            <p class="mx-auto mt-3 max-w-3xl text-center text-sm leading-relaxed text-mist md:text-left md:text-base">
+              Same blue as the shirt. Same dollar as the hat. Stable Inu is the Shiba that showed up on Arc and decided the serious money meta needed a mascot.
+            </p>
+
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href="https://argus.world/token/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="buy-shine inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-b from-[#4B9BF2] to-[#1E67C2] px-6 text-base font-extrabold text-white shadow-glow"
+              >
+                <svg viewBox="0 0 64 64" class="relative z-10 h-5 w-5 fill-current" aria-hidden="true">
+                  <ellipse cx="32" cy="42" rx="12" ry="10" />
+                  <ellipse cx="16" cy="28" rx="6" ry="8" />
+                  <ellipse cx="27" cy="18" rx="6" ry="8" />
+                  <ellipse cx="39" cy="18" rx="6" ry="8" />
+                  <ellipse cx="49" cy="29" rx="6" ry="8" />
+                </svg>
+                <span class="relative z-10">Buy Now</span>
+              </a>
+              <a
+                href="https://dexscreener.com/arc/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 text-base font-extrabold text-white backdrop-blur hover:border-usdcbright/70 hover:bg-white/15"
+              >
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M4 19V5M4 19h16" />
+                  <path d="M7 15l4-5 3 3 5-7" />
+                </svg>
+                Chart
+              </a>
+              <a
+                href="https://x.com/StableInu_arc"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 text-base font-extrabold text-white hover:border-usdcbright/70 hover:bg-white/15"
+              >
+                <img src="x.png" alt="" width="554" height="554" class="h-6 w-6 rounded-full object-cover" />
+                Follow
+              </a>
+            </div>
+
+            <div class="mt-5 flex items-center gap-2 rounded-2xl border border-usdc/40 bg-black/35 p-2 pl-4">
+              <span class="shrink-0 text-[11px] font-extrabold tracking-[0.2em] text-usdcbright">CA</span>
+              <span data-ca class="min-w-0 flex-1 truncate font-mono text-sm text-white sm:text-base" title="0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA">0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA</span>
+              <button
+                type="button"
+                class="js-copy inline-flex h-11 shrink-0 items-center rounded-xl bg-usdc px-4 text-sm font-extrabold text-white hover:bg-[#1f66b5]"
+                data-label="Copy"
+              >Copy</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker mt-8 overflow-hidden border-y border-white/10 bg-usdc">
+      <div class="ticker-track flex w-max">
+        <p class="flex shrink-0 items-center gap-8 py-3 pr-8 text-sm font-extrabold tracking-[0.22em] text-white">
+          <span>$SINU</span><span aria-hidden="true">•</span>
+          <span>STABLE INU</span><span aria-hidden="true">•</span>
+          <span>ARC USDC</span><span aria-hidden="true">•</span>
+          <span>STABLECOINS ARE TAKING OVER</span><span aria-hidden="true">•</span>
+          <span>APPLE</span><span aria-hidden="true">•</span>
+          <span>GOOGLE</span><span aria-hidden="true">•</span>
+          <span>EU DIGITAL FUTURE</span><span aria-hidden="true">•</span>
+          <span>$SINU LEADS THE MEME WAVE</span><span aria-hidden="true">•</span>
+        </p>
+        <p class="flex shrink-0 items-center gap-8 py-3 pr-8 text-sm font-extrabold tracking-[0.22em] text-white" aria-hidden="true">
+          <span>$SINU</span><span>•</span>
+          <span>STABLE INU</span><span>•</span>
+          <span>ARC USDC</span><span>•</span>
+          <span>STABLECOINS ARE TAKING OVER</span><span>•</span>
+          <span>APPLE</span><span>•</span>
+          <span>GOOGLE</span><span>•</span>
+          <span>EU DIGITAL FUTURE</span><span>•</span>
+          <span>$SINU LEADS THE MEME WAVE</span><span>•</span>
+        </p>
+      </div>
+    </div>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 md:py-20" aria-labelledby="wave-title">
+      <div class="max-w-2xl">
+        <p class="text-xs font-extrabold tracking-[0.28em] text-fur">THE WAVE</p>
+        <h2 id="wave-title" class="mt-2 font-display text-4xl tracking-wide text-white sm:text-5xl">Serious money. Unserious dog.</h2>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <article class="rounded-3xl border border-white/12 bg-[#071422]/85 p-6 backdrop-blur-md transition hover:-translate-y-1 hover:border-usdc/60">
+          <p class="font-display text-3xl text-usdcbright">01</p>
+          <h3 class="mt-3 text-xl font-extrabold text-white">The takeover</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Stablecoins are walking into the mainstream, from Apple and Google to the EU’s digital future. The pipes are being laid in public.</p>
+        </article>
+        <article class="rounded-3xl border border-usdc/40 bg-[#0c2a4d]/90 p-6 shadow-glow backdrop-blur-md transition hover:-translate-y-1">
+          <p class="font-display text-3xl text-usdcbright">02</p>
+          <h3 class="mt-3 text-xl font-extrabold text-white">The meme wave</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Every money meta grows a mascot. $SINU is that mascot: a deadpan Shiba in full USDC uniform, leading the meme wave on Arc.</p>
+        </article>
+        <article class="rounded-3xl border border-white/12 bg-[#071422]/85 p-6 backdrop-blur-md transition hover:-translate-y-1 hover:border-usdc/60">
+          <p class="font-display text-3xl text-usdcbright">03</p>
+          <h3 class="mt-3 text-xl font-extrabold text-white">Paid in Arc USDC</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">You buy $SINU with USDC on Arc. The chain, the stablecoin, and the dog’s outfit are finally talking about the same dollar.</p>
+        </article>
+      </div>
+
+      <dl class="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div class="rounded-2xl border border-white/10 bg-[#071422]/80 px-4 py-4 backdrop-blur">
+          <dt class="text-[11px] font-extrabold tracking-[0.18em] text-mist">NAME</dt>
+          <dd class="mt-1 font-extrabold text-white">Stable Inu</dd>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-[#071422]/80 px-4 py-4 backdrop-blur">
+          <dt class="text-[11px] font-extrabold tracking-[0.18em] text-mist">SYMBOL</dt>
+          <dd class="mt-1 font-extrabold text-white">$SINU</dd>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-[#071422]/80 px-4 py-4 backdrop-blur">
+          <dt class="text-[11px] font-extrabold tracking-[0.18em] text-mist">CHAIN</dt>
+          <dd class="mt-1 font-extrabold text-white">Arc</dd>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-[#071422]/80 px-4 py-4 backdrop-blur">
+          <dt class="text-[11px] font-extrabold tracking-[0.18em] text-mist">BUY WITH</dt>
+          <dd class="mt-1 font-extrabold text-white">Arc USDC</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="how-to-buy" class="scroll-mt-24 mx-auto max-w-6xl px-4 pb-16 md:pb-20" aria-labelledby="buy-title">
+      <div class="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
+        <div class="max-w-xl">
+          <p class="text-xs font-extrabold tracking-[0.28em] text-fur">HOW TO BUY</p>
+          <h2 id="buy-title" class="mt-2 font-display text-4xl tracking-wide sm:text-5xl">Four steps. Arc USDC in.</h2>
+          <p class="mt-3 text-mist">Buy $SINU with USDC on Arc. Wallet, funds, swap on Argus, confirm.</p>
+        </div>
+        <a
+          href="https://argus.world/token/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="buy-shine inline-flex h-12 items-center rounded-full bg-gradient-to-b from-[#4B9BF2] to-[#1E67C2] px-6 font-extrabold text-white shadow-glow"
+        ><span class="relative z-10">Buy Now</span></a>
+      </div>
+
+      <ol class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <li class="flex h-full flex-col rounded-3xl border border-white/12 bg-[#071422]/88 p-6 backdrop-blur-md">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-usdc font-display text-2xl text-white shadow-glow">01</span>
+          <h3 class="mt-5 text-lg font-extrabold">Set up on Arc</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Open a wallet that supports the Arc network. Create an account or connect the one you already use, then switch the network to Arc.</p>
+        </li>
+        <li class="flex h-full flex-col rounded-3xl border border-white/12 bg-[#071422]/88 p-6 backdrop-blur-md">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-usdc font-display text-2xl text-white shadow-glow">02</span>
+          <h3 class="mt-5 text-lg font-extrabold">Load Arc USDC</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Send USDC to that wallet on Arc. This is the stablecoin you spend. $SINU is bought with Arc USDC, the same dollar on the mascot’s hat.</p>
+        </li>
+        <li class="flex h-full flex-col rounded-3xl border border-usdc bg-[#0d3e78] p-6 shadow-glow">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white font-display text-2xl text-usdc">03</span>
+          <h3 class="mt-5 text-lg font-extrabold">Swap on Argus</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-white/90">Open the $SINU page on Argus, connect your wallet, and swap Arc USDC for $SINU. Check the amount and the contract before you sign.</p>
+          <a
+            href="https://argus.world/token/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-flex h-11 items-center justify-center rounded-full bg-white px-4 text-sm font-extrabold text-usdc"
+          >Buy Now</a>
+        </li>
+        <li class="flex h-full flex-col rounded-3xl border border-white/12 bg-[#071422]/88 p-6 backdrop-blur-md">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-usdc font-display text-2xl text-white shadow-glow">04</span>
+          <h3 class="mt-5 text-lg font-extrabold">Confirm and keep it</h3>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Approve the swap in your wallet. When it confirms, $SINU is yours. Copy the contract address if you need to import the token or open the chart.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="chart" class="scroll-mt-24 mx-auto max-w-6xl px-4 pb-20" aria-labelledby="chart-title">
+      <div class="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <p class="text-xs font-extrabold tracking-[0.28em] text-fur">CHART</p>
+          <h2 id="chart-title" class="mt-2 font-display text-4xl tracking-wide sm:text-5xl">$SINU / USDC</h2>
+          <p class="mt-3 text-mist">Live market on Dexscreener. Arc pair, USDC side.</p>
+        </div>
+        <a
+          href="https://dexscreener.com/arc/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 font-extrabold text-white hover:border-usdcbright/70 hover:bg-white/15"
+        >Open Chart</a>
+      </div>
+
+      <div class="mt-6 flex flex-col gap-3 rounded-2xl border border-usdc/35 bg-[#071422]/80 p-2 backdrop-blur sm:flex-row sm:items-center">
+        <div class="flex min-w-0 flex-1 items-center gap-2 px-2">
+          <span class="text-[11px] font-extrabold tracking-[0.2em] text-usdcbright">CA</span>
+          <span data-ca class="min-w-0 flex-1 truncate font-mono text-sm">0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA</span>
+        </div>
+        <button
+          type="button"
+          class="js-copy inline-flex h-11 items-center justify-center rounded-xl bg-usdc px-4 text-sm font-extrabold text-white hover:bg-[#1f66b5]"
+          data-label="Copy"
+        >Copy</button>
+      </div>
+
+      <div class="mt-4 overflow-hidden rounded-[1.5rem] border border-usdc/40 bg-[#07111d] shadow-glow">
+        <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="ml-2 truncate font-mono text-xs text-mist">dexscreener.com/arc/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA</span>
+        </div>
+        <div class="relative h-[640px] w-full md:h-[680px]">
+          <iframe
+            title="Dexscreener chart for SINU on Arc"
+            src="https://dexscreener.com/arc/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
+            class="absolute inset-0 h-full w-full border-0"
+            loading="lazy"
+            allow="clipboard-write"
+          ></iframe>
+        </div>
+      </div>
+      <p id="copy-status" class="sr-only" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#06101c]/80 pb-24 backdrop-blur lg:pb-0">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="" width="512" height="512" class="h-14 w-14 rounded-2xl object-cover ring-2 ring-usdc" />
+        <div>
+          <p class="font-display text-3xl leading-none tracking-wide">STABLE INU</p>
+          <p class="mt-1 text-sm font-bold tracking-[0.18em] text-usdcbright">$SINU</p>
+        </div>
+      </div>
+      <p class="max-w-md text-sm leading-relaxed text-mist">
+        Stablecoins are taking over, from Apple and Google to the EU’s digital future. $SINU leads the meme wave.
+      </p>
+      <div class="flex flex-wrap items-center gap-2">
+        <a
+          href="https://x.com/StableInu_arc"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Stable Inu on X"
+          class="grid h-11 w-11 place-items-center overflow-hidden rounded-full ring-1 ring-white/20"
+        >
+          <img src="x.png" alt="" width="554" height="554" class="h-full w-full object-cover" />
+        </a>
+        <a
+          href="https://dexscreener.com/arc/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex h-11 items-center rounded-full border border-white/20 px-4 text-sm font-extrabold"
+        >Chart</a>
+        <a
+          href="https://argus.world/token/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex h-11 items-center rounded-full bg-usdc px-4 text-sm font-extrabold text-white"
+        >Buy Now</a>
+      </div>
+    </div>
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 pb-8 sm:flex-row sm:items-center">
+      <div class="flex min-w-0 flex-1 items-center gap-2 rounded-2xl border border-white/10 bg-black/30 px-4 py-2">
+        <span class="text-[11px] font-extrabold tracking-[0.2em] text-usdcbright">CA</span>
+        <span data-ca class="truncate font-mono text-sm">0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA</span>
+      </div>
+      <button type="button" class="js-copy h-11 rounded-xl bg-usdc px-4 text-sm font-extrabold text-white" data-label="Copy CA">Copy CA</button>
+    </div>
+    <p class="px-4 pb-8 text-center text-xs text-white/50">$SINU is a meme token on Arc. Do your own research before you buy.</p>
+  </footer>
+
+  <div class="fixed inset-x-0 bottom-0 z-50 flex gap-2 border-t border-white/10 bg-[#06101c]/92 p-3 backdrop-blur lg:hidden">
+    <a
+      href="https://dexscreener.com/arc/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex h-12 flex-1 items-center justify-center rounded-full border border-white/20 text-sm font-extrabold"
+    >Chart</a>
+    <a
+      href="https://argus.world/token/0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex h-12 flex-1 items-center justify-center rounded-full bg-gradient-to-b from-[#4B9BF2] to-[#1E67C2] text-sm font-extrabold text-white"
+    >Buy Now</a>
+  </div>
+
+  <script>
+    (function () {
+      var status = document.getElementById("copy-status");
+      function contract() {
+        var node = document.querySelector("[data-ca]");
+        return node ? node.textContent.trim() : "0xE7f592757C6cc92515Bc2AE71cfC2895C0d424bA";
+      }
+      function fallbackCopy(value) {
+        var field = document.createElement("textarea");
+        field.value = value;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.left = "-9999px";
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand("copy");
+        field.remove();
+      }
+      document.querySelectorAll(".js-copy").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var value = contract();
+          var label = button.getAttribute("data-label") || "Copy";
+          var apply = function () {
+            button.dataset.state = "copied";
+            button.textContent = "Copied";
+            if (status) status.textContent = "Contract address copied";
+            window.setTimeout(function () {
+              button.dataset.state = "";
+              button.textContent = label;
+              if (status) status.textContent = "";
+            }, 1600);
+          };
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(value).then(apply).catch(function () {
+              fallbackCopy(value);
+              apply();
+            });
+          } else {
+            fallbackCopy(value);
+            apply();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
